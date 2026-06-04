@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 44">
+  <path d="M20 22C20 16 24 12 22 8C20 12 10 14 10 22C10 28 15 34 22 34C29 34 34 28 34 22C34 16 30 14 28 10C26 14 20 16 20 22Z" fill="#0064FF" stroke="#0064FF"/>
+  <circle cx="22" cy="8" r="3" fill="#FFD700"/>
+  <text x="42" y="22" font-family="Arial, sans-serif" font-weight="700" font-size="15" fill="white">Paramount</text>
+  <text x="42" y="36" font-family="Arial, sans-serif" font-weight="900" font-size="14" fill="#0064FF">+</text>
+</svg>
