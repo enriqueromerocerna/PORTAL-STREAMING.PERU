@@ -392,3 +392,31 @@ body {
   height: 100%;
   filter: brightness(0) invert(1);
 }
+
+/* ── UNICORN STUDIO BACKGROUND (Plataformas) ── */
+.platforms {
+  position: relative;
+  isolation: isolate;
+}
+.platforms__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0;
+  opacity: 0.55;
+}
+.platforms__bg canvas,
+.platforms__bg iframe {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+/* Content must sit above the background */
+.platforms .section-divider,
+.platforms .platforms__grid {
+  position: relative;
+  z-index: 1;
+}

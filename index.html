@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.unicorn.studio/v1.4.0/unicornStudio.umd.js"></script>
 </head>
 <body>
 
@@ -65,6 +66,8 @@
 
   <!-- PLATAFORMAS -->
   <section class="platforms" id="catalogo">
+    <!-- Unicorn Studio animated background -->
+    <div class="platforms__bg" data-us-project="cbmTT38A0CcuYxeiyj5H" data-us-scale="cover"></div>
     <div class="section-divider">
       <span class="section-divider__line"></span>
       <h2 class="section-divider__title">Plataformas disponibles</h2>
@@ -264,5 +267,13 @@
   </footer>
 
   <script src="main.js"></script>
+  <script>
+    // Init Unicorn Studio background
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.UnicornStudio) {
+        UnicornStudio.init();
+      }
+    });
+  </script>
 </body>
 </html>
