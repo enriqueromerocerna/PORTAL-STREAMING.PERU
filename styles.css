@@ -114,32 +114,58 @@ body {
 .section-divider__line:last-child { background: linear-gradient(90deg,var(--red),transparent); }
 .section-divider__title { font-size: 1.2rem; font-weight: 600; color: #fff; white-space: nowrap; }
 
-.platforms__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
+.platforms__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
 
 .platform-card {
-  background: #1c1c1c;
-  border: 1px solid #2e2e2e;
   border-radius: 14px;
   height: 110px;
-  display: flex; align-items: center; justify-content: center;
-  padding: 14px 18px;
-  transition: border-color .25s, transform .25s, box-shadow .25s;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   overflow: hidden;
+  border: 1px solid #2e2e2e;
+  cursor: pointer;
+  transition: transform .25s, box-shadow .25s;
+  background: #1c1c1c;
 }
-.platform-card:hover { border-color: #555; transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,.5); }
+.platform-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,0,0,.5);
+}
 
-/* Logo: fill the card, always fully visible */
+/* Image fills the entire card */
 .plat-logo {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
   display: block;
+  border-radius: 13px;
 }
 
-.platform-card--more { flex-direction: column; gap: 4px; background: #161616; }
-.platform-card__dots { font-size: 1.6rem; color: var(--text-muted); letter-spacing: 3px; line-height: 1; }
-.platform-card__more-text { font-size: .8rem; color: var(--text-muted); text-align: center; line-height: 1.6; }
+.platform-card--more {
+  flex-direction: column;
+  gap: 4px;
+  background: #161616;
+  padding: 1rem;
+}
+.platform-card__dots {
+  font-size: 1.6rem;
+  color: var(--text-muted);
+  letter-spacing: 3px;
+  line-height: 1;
+}
+.platform-card__more-text {
+  font-size: .8rem;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.6;
+}
 
 /* ── FEATURES ──────────────────────── */
 .features { padding: 0 5rem 4rem; background: var(--bg); }
@@ -205,12 +231,7 @@ body {
   .hero__title { font-size: 2.5rem; }
 }
 
-/* ── PLATFORM CARD BACKGROUNDS ─── */
-.platform-card--netflix    { background: #141414; }
-.platform-card--disney     { background: #0e1a5e; }
-.platform-card--max        { background: #1a1aff; }
-.platform-card--primevideo { background: #0d1b2e; }
-.platform-card--paramount  { background: #0d1b2e; }
+
 
 /* ── COMBOS SECTION ────────────── */
 .combos {
@@ -304,4 +325,25 @@ body {
 @media (max-width: 900px) {
   .combos { padding: 3rem 1.5rem; }
   .combos__grid { grid-template-columns: 1fr; }
+}
+
+/* Netflix y Disney: SVG transparente → fondo de marca + padding */
+.platform-card--netflix {
+  background: #141414;
+  padding: 20px 30px !important;
+}
+.platform-card--netflix .plat-logo {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.platform-card--disney {
+  background: #0e1a5e;
+  padding: 20px 30px !important;
+}
+.platform-card--disney .plat-logo {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  filter: brightness(0) invert(1);
 }
