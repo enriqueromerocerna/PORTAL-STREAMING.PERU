@@ -120,53 +120,26 @@ body {
   background: #1c1c1c;
   border: 1px solid #2e2e2e;
   border-radius: 14px;
-  height: 100px;
+  height: 110px;
   display: flex; align-items: center; justify-content: center;
-  gap: 12px;
-  padding: 16px 24px;
+  padding: 14px 18px;
   transition: border-color .25s, transform .25s, box-shadow .25s;
-  cursor: pointer; overflow: hidden;
+  cursor: pointer;
+  overflow: hidden;
 }
 .platform-card:hover { border-color: #555; transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,.5); }
 
-/* Special card backgrounds matching mockup */
-.platform-card--netflix { background: #141414; }
-.platform-card--disney  { background: #0e1a5e; }
-.platform-card--max     { background: #002be7; }
-
-/* Logo sizing */
+/* Logo: fill the card, always fully visible */
 .plat-logo {
-  max-height: 44px;
-  max-width: 140px;
-  width: auto; height: auto;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   display: block;
 }
-.plat-logo--sm { max-height: 36px; max-width: 36px; }
-.plat-logo--invert { filter: brightness(0) invert(1); }
 
-/* Label next to icon logos */
-.plat-label {
-  font-size: 1.05rem; font-weight: 700; color: #fff;
-  white-space: nowrap;
-}
-.plat-label--sub {
-  font-size: .85rem; font-weight: 600; color: #ccc;
-  margin-top: -4px;
-}
-
-/* YouTube card stacks text vertically */
-.platform-card:has(.plat-label--sub) {
-  flex-direction: row;
-  align-items: center;
-}
-.yt-text { display: flex; flex-direction: column; line-height: 1.2; }
-.yt-text span:first-child { font-size: .8rem; color: #ccc; font-weight: 400; }
-.yt-text span:last-child  { font-size: 1rem; color: #fff; font-weight: 700; }
-
-.platform-card--more { flex-direction: column; gap: 3px; background: #161616; }
+.platform-card--more { flex-direction: column; gap: 4px; background: #161616; }
 .platform-card__dots { font-size: 1.6rem; color: var(--text-muted); letter-spacing: 3px; line-height: 1; }
-.platform-card__more-text { font-size: .8rem; color: var(--text-muted); }
+.platform-card__more-text { font-size: .8rem; color: var(--text-muted); text-align: center; line-height: 1.6; }
 
 /* ── FEATURES ──────────────────────── */
 .features { padding: 0 5rem 4rem; background: var(--bg); }
@@ -238,14 +211,6 @@ body {
 .platform-card--max        { background: #1a1aff; }
 .platform-card--primevideo { background: #0d1b2e; }
 .platform-card--paramount  { background: #0d1b2e; }
-
-.plat-logo {
-  max-height: 52px;
-  max-width: 160px;
-  width: auto; height: auto;
-  object-fit: contain;
-  display: block;
-}
 
 /* ── COMBOS SECTION ────────────── */
 .combos {
