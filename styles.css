@@ -231,3 +231,112 @@ body {
   .features__grid  { grid-template-columns: 1fr; }
   .hero__title { font-size: 2.5rem; }
 }
+
+/* ── PLATFORM CARD BACKGROUNDS ─── */
+.platform-card--netflix    { background: #141414; }
+.platform-card--disney     { background: #0e1a5e; }
+.platform-card--max        { background: #1a1aff; }
+.platform-card--primevideo { background: #0d1b2e; }
+.platform-card--paramount  { background: #0d1b2e; }
+
+.plat-logo {
+  max-height: 52px;
+  max-width: 160px;
+  width: auto; height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── COMBOS SECTION ────────────── */
+.combos {
+  padding: 4rem 5rem;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+}
+
+.combos__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.combo-card {
+  background: #1c1c1c;
+  border: 1px solid #2e2e2e;
+  border-radius: 16px;
+  padding: 2rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  transition: transform .25s, box-shadow .25s;
+}
+.combo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,.5);
+}
+.combo-card--featured {
+  border-color: var(--red);
+  background: #1f1212;
+  box-shadow: 0 0 30px rgba(229,9,20,.12);
+}
+
+.combo-card__badge {
+  display: inline-block;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: var(--red);
+  background: rgba(229,9,20,.12);
+  border: 1px solid rgba(229,9,20,.3);
+  padding: .25rem .7rem;
+  border-radius: 20px;
+  width: fit-content;
+}
+.combo-card__badge--gold {
+  color: #f5a623;
+  background: rgba(245,166,35,.12);
+  border-color: rgba(245,166,35,.3);
+}
+
+.combo-card__name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+.combo-card__desc {
+  font-size: .88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.combo-card__platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.combo-pill {
+  font-size: .75rem;
+  font-weight: 600;
+  padding: .25rem .65rem;
+  border-radius: 20px;
+  letter-spacing: .02em;
+}
+.combo-pill--netflix  { background: rgba(229,9,20,.2);   color: #ff4d4d; border: 1px solid rgba(229,9,20,.4); }
+.combo-pill--disney   { background: rgba(14,26,94,.5);   color: #6b9fff; border: 1px solid #1e3a8a; }
+.combo-pill--max      { background: rgba(0,43,231,.25);  color: #7ca8ff; border: 1px solid rgba(0,43,231,.5); }
+.combo-pill--prime    { background: rgba(0,168,225,.15); color: #00a8e1; border: 1px solid rgba(0,168,225,.3); }
+.combo-pill--spotify  { background: rgba(29,185,84,.15); color: #1db954; border: 1px solid rgba(29,185,84,.3); }
+.combo-pill--crunchy  { background: rgba(244,117,33,.15);color: #f47521; border: 1px solid rgba(244,117,33,.3); }
+
+.combo-card__btn {
+  margin-top: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Responsive combos */
+@media (max-width: 900px) {
+  .combos { padding: 3rem 1.5rem; }
+  .combos__grid { grid-template-columns: 1fr; }
+}
