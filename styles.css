@@ -420,3 +420,23 @@ body {
   position: relative;
   z-index: 1;
 }
+
+/* ── GLSL Hills background (Combos) ── */
+.combos {
+  position: relative;
+  isolation: isolate;
+}
+#glsl-hills-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: block;
+}
+/* All combos content above the canvas */
+.combos .section-divider,
+.combos .combos__grid {
+  position: relative;
+  z-index: 1;
+}
