@@ -221,7 +221,7 @@ body {
   line-height: 1.7;
   text-shadow: 0 1px 8px rgba(0,0,0,.6);
 }
-.hero__cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+
 
 /* ── PLATFORMS/* ── PLATFORMS ─────────────────────── */
 .platforms { padding: 4.5rem 5rem; background: var(--bg); }
@@ -838,8 +838,8 @@ body {
   /* Hero */
   .hero__title { font-size: 2.4rem; }
   .hero__subtitle { font-size: .88rem; }
-  .hero__cta { flex-direction: column; }
-  .hero__cta .btn { width: 100%; justify-content: center; }
+  
+  
   .hero__bg-overlay {
     background: linear-gradient(
       90deg,
@@ -917,10 +917,7 @@ body {
   font-size: 1.1rem !important;
   margin-bottom: 2.5rem !important;
 }
-.hero__cta .btn {
-  font-size: 1.05rem !important;
-  padding: 1rem 2.2rem !important;
-}
+
 
 /* ═══════════════════════════════════════
    ACCORDION DE IMÁGENES (Modal Netflix)
@@ -989,5 +986,123 @@ body {
   .acc-item { min-width: 36px; border-radius: 8px; }
   .hero__title { font-size: 2.2rem !important; }
   .hero__subtitle { font-size: .9rem !important; }
-  .hero__cta .btn { font-size: .92rem !important; padding: .85rem 1.5rem !important; }
+  
+}
+
+/* ═══════════════════════════════════════
+   COLORFUL BUTTON — "y más..."
+═══════════════════════════════════════ */
+.platform-card--more {
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 14px !important;
+}
+
+.colorful-btn {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 110px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  padding: 0;
+}
+
+.colorful-btn__bg {
+  position: absolute;
+  inset: -2px;
+  border-radius: 16px;
+  background: conic-gradient(
+    from var(--angle, 0deg),
+    #e50914, #ff6b35, #f7c59f,
+    #efefd0, #00b4d8, #7b2d8b,
+    #e50914
+  );
+  animation: colorfulSpin 3s linear infinite;
+  z-index: 0;
+}
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes colorfulSpin {
+  to { --angle: 360deg; }
+}
+.colorful-btn::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: #111;
+  border-radius: 12px;
+  z-index: 1;
+}
+.colorful-btn__label {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #fff;
+  font-size: .85rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.colorful-btn__dots {
+  font-size: 1.4rem;
+  letter-spacing: 3px;
+  line-height: 1;
+}
+.colorful-btn:hover .colorful-btn__bg {
+  animation-duration: 1s;
+}
+
+/* ── ap-logo inside all-platforms cards ── */
+.ap-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+.ap-logo {
+  max-width: 100%;
+  max-height: 55px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ── Hero CTA side by side always ── */
+
+
+/* ── Fix Disney card background ── */
+.platform-card:has([alt="Disney+"]) {
+  background: #03125E;
+  padding: 0 !important;
+}
+
+/* ── HERO CTA — siempre en fila ── */
+.hero__cta {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+.hero__cta .btn {
+  flex-shrink: 0;
+}
+@media (max-width: 400px) {
+  .hero__cta { flex-wrap: wrap; }
+  .hero__cta .btn { width: 100%; justify-content: center; }
 }
